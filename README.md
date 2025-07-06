@@ -1,2 +1,1 @@
-# kerdle
-kill all that is not kerdle
+its not
