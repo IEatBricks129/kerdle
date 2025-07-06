@@ -19,6 +19,18 @@
             position: relative;
             z-index: 0;
         }
+        #wingdings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ec0707;
+            font-family: 'Wingdings', sans-serif;
+            text-align: center;
+            z-index: 1;
+            user-select: none;
+            display: none; 
+        }
         .spinning-berdly-bg {
             position: fixed;
             top: 50%;
@@ -88,6 +100,9 @@
     </style>
 </head>
 <body>
+    <div id="wingdings">
+        <h1>KERDLEY IS CANON</h1>
+    </div>
     <div class="spinning-berdly-bg">
         <img src="media/images/berdly.jpg" alt="Spinning Berdly">
     </div>
@@ -108,6 +123,16 @@
             window.addEventListener('keydown', playAudio, { once: true });
         }
     });
+
+    let timeoutId;
+    function Gaster() {
+        const x = document.getElementById("wingdings");
+        x.style.display = "block";
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function() {
+            x.style.display = "none";
+        }, 5000);
+    } 
 
     function spawnFeather() {
         const feather = document.createElement('img');
@@ -205,6 +230,11 @@
         setNextBackground();
         setInterval(setNextBackground, 5000);
     }
+    setInterval(function() {
+        if (Math.floor(Math.random() * 10) + 1 === 6) {
+            Gaster();
+        }
+    }, 5000);
     </script>
 </body>
 </html>
