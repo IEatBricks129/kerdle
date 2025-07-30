@@ -5,7 +5,7 @@
     <title>Kerdlyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</title>
     <link rel="icon" type="image/x-icon" href="media/images/berdly.jpg">
     <meta property="og:title" content="kerdly">
-    <meta property="og:description" content="kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly kerdly">
+    <meta property="og:description" content="Absolute Kerdly Jockey">
     <style>
         body {
             background: #000;
@@ -235,6 +235,28 @@
             Gaster();
         }
     }, 5000);
+
+    // Load links.txt and open a random link in a new window every 5 seconds
+    let kerdlyLinks = [];
+    fetch('links.txt')
+        .then(res => res.text())
+        .then(text => {
+            kerdlyLinks = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+            function openRandomLinkWindow() {
+                if (kerdlyLinks.length > 0) {
+                    const idx = Math.floor(Math.random() * kerdlyLinks.length);
+                    window.open(
+                        kerdlyLinks[idx],
+                        '_blank',
+                        'width=800,height=600,left=100,top=100,resizable=yes,scrollbars=yes'
+                    );
+                }
+                const nextDelay = 1000 + Math.random() * 2000; // 1-3 seconds
+                setTimeout(openRandomLinkWindow, nextDelay);
+            }
+            openRandomLinkWindow();
+        });
     </script>
 </body>
 </html>
