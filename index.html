@@ -72,6 +72,32 @@
                 2px 0px 0 #000,
                 0px -2px 0 #000,
                 -2px 0px 0 #000;
+            }
+            .spinning-top-left {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: #fff;
+                    font-size: 1.5rem;
+                    font-family: Arial, sans-serif;
+                    z-index: 100;
+                    user-select: none;
+                    text-shadow:
+                        -2px -2px 0 #000,
+                        2px -2px 0 #000,
+                        -2px 2px 0 #000,
+                        2px 2px 0 #000;
+                    animation: spin-text 2.5s linear infinite;
+                    white-space: pre-line;
+                    max-width: 400px;
+                    background: rgba(0,0,0,0.85);
+                    padding: 8px 16px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 12px #000a;
+            }
+            @keyframes spin-text {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
         }
         .center-img {
             position: absolute;
@@ -107,6 +133,7 @@
         <img src="media/images/berdly.jpg" alt="Spinning Berdly">
     </div>
     <div class="top-text">on everyones soul kerdly is canon</div>
+        <div class="spinning-top-left">me when i manipulate a 16 year old because i got kicked from my friend group</div>
         <a href="https://discord.gg/utdr" target="_blank">
         <img src="media/images/kerdly-kris.gif" alt="KERDLY SWEEP" class="center-img">
     </a>
